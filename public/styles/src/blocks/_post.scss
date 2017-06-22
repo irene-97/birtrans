@@ -1,0 +1,338 @@
+.block-post {
+    overflow: hidden;
+
+    p {
+        padding: 5px 10px 10px 0;
+        text-align: justify;
+
+        &[align="left"] {
+            text-align: left;
+        }
+
+        &[align="center"] {
+            text-align: center;
+        }
+
+        &[align="right"] {
+            text-align: right;
+        }
+    }
+
+    h2 {
+        margin: 5px 0;
+        font-family: "Tahoma", sans-serif;
+        font-size: 18px;
+        font-weight: normal;
+        text-align: center;
+        color: #000;
+    }
+
+    img {
+        max-width: 100%;
+        margin: 10px 0;
+
+        &[align="left"] {
+            margin-right: 15px;
+        }
+
+        &[align="right"] {
+            margin-left: 15px;
+        }
+    }
+
+    ul {
+        list-style: disc outside;
+        margin-left: 30px;
+
+        li {
+            padding-left: 0;
+        }
+    }
+
+    .slider {
+        z-index: 1;
+        margin: 0;
+        font-size: 0;
+        white-space: nowrap;
+        overflow: hidden;
+
+        .slide {
+            display: inline-block;
+            width: 685px;
+            outline: none;
+            text-align: center;
+            vertical-align: top;
+
+            img {
+                display: block;
+                max-width: 100%;
+                height: auto;
+                margin: 0 auto;
+            }
+        }
+
+        .slick-list {
+            position: relative;
+            z-index: 1;
+            margin: 0 40px;
+        }
+
+        .slick-arrow {
+            position: absolute;
+            top: 0;
+            z-index: 2;
+            display: block;
+            width: 30px;
+            height: 100%;
+            border: none;
+            outline: none;
+            padding: 0;
+            font-size: 0;
+            background: none;
+            cursor: pointer;
+
+            &.slick-prev {
+                left: 0;
+
+                &:before {
+                    @include icon('prev', 'y');
+                    right: 0;
+                }
+            }
+
+            &.slick-next {
+                right: 0;
+
+                &:before {
+                    @include icon('next', 'y');
+                    left: 0;
+                }
+            }
+        }
+    }
+
+    table {
+        width: auto;
+    }
+
+    .show-more {
+        display: none;
+        width: 170px;
+        margin: 10px auto;
+        padding: 0 5px;
+        border: none;
+        border-radius: 3px;
+        outline: none;
+        font-family: "Arial", sans-serif;
+        font-size: 15px;
+        line-height: 40px;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #fff;
+        background: #ccc;
+    }
+
+    .news-date-time {
+        margin-bottom: 10px;
+        color: #666;
+    }
+
+    .all-news {
+        display: block;
+        width: 70px;
+        padding: 0 3px;
+        border-radius: 3px;
+        font-family: "Arial", sans-serif;
+        font-size: 8px;
+        line-height: 20px;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #fff;
+        background: #ccc;
+    }
+
+    .news_item {
+        margin-bottom: 25px;
+        padding-bottom: 10px;
+        background: url('images/dashed.gif') repeat-x scroll 0 100% transparent;
+    }
+
+    .news_link {
+        margin: 5px 0 10px 0;
+    }
+
+    .nav-pages a,
+    .nav-current-page {
+        font-size: 14px;
+        font-family: Tahoma;
+    }
+
+    .p_start {
+        background: url('images/p-left.gif') 0 4px no-repeat !important;
+        padding: 0 20px !important;
+    }
+
+    .p_end {
+        background: url('images/p-right.gif') 100% 4px no-repeat !important;
+        padding: 0 20px !important;
+    }
+
+    .p_next_lt, .p_next_rt {
+        background: none !important;
+        padding: 0 10px !important;
+    }
+
+    .p_next_lt a, .p_next_rt a {
+        display: block;
+        width: 16px;
+        height: 18px;
+    }
+
+    .p_next_lt a {
+        background: url('images/p-right.gif') 50% 4px no-repeat !important;
+    }
+
+    .p_next_rt a {
+        background: url('images/p-right.gif') 50% 4px no-repeat !important;
+    }
+
+    .p_p, .nav-current-page {
+        background: none !important;
+        font-weight: bold;
+        padding: 0 10px !important;
+    }
+
+    .p_otst1 {
+        text-indent: 45px;
+        text-align: justify;
+    }
+    .p_otst2 {
+        text-indent: 40px;
+        text-align: justify;
+        margin-top: -10px;
+        margin-bottom: -1px;
+    }
+
+    .nav-current-page {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .nav-pages {
+        padding: 20px 0;
+        margin: auto;
+        width: 450px;
+        height: 18px;
+    }
+
+    .nav-pages ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-pages ul li {
+        float: left;
+        margin: 0 !important;
+    }
+
+    .glav_str {
+        text-indent: 40px;
+        margin-top: -10px;
+        margin-bottom: -1px;
+        padding-bottom: 10px;
+        padding-top: -1px;
+    }
+
+    .detail_picture {
+        float: left;
+        margin: 0 8px 6px 1px;
+    }
+
+    .spis_nesort {
+        list-style-type: square;
+    }
+}
+
+@include screen-down(lg) {
+    .block-post {
+        .slider {
+            .slide {
+                width: 595px;
+            }
+        }
+    }
+}
+
+@include screen-down(md) {
+    .block-post {
+        .slider {
+            .slide {
+                width: 495px;
+            }
+        }
+    }
+}
+
+@include screen-down(sm) {
+    .block-post {
+        .slider {
+            .slide {
+                width: 600px;
+            }
+        }
+
+        .show-more {
+            display: block;
+        }
+
+        .post-more {
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        &.open {
+            .show-more {
+                display: none;
+            }
+
+            .post-more {
+                height: auto;
+                overflow: visible;
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        .all-news {
+            width: 170px;
+            margin-top: 10px;
+            font-size: 15px;
+            line-height: 40px;
+        }
+    }
+}
+
+@include screen-down(xsm) {
+    .block-post {
+        .slider {
+            .slide {
+                width: 500px;
+            }
+        }
+    }
+}
+
+@include screen-down(xs) {
+    .block-post {
+        .slider {
+            .slide {
+                width: 400px;
+            }
+        }
+    }
+}

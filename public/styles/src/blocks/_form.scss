@@ -1,0 +1,50 @@
+.block-form {
+    .form {
+        margin-top: 25px;
+    }
+
+    .form td {
+        vertical-align: middle;
+        padding: 0 5px;
+    }
+
+    .form input, .form textarea, .form select {
+        padding: 2px;
+        margin: 10px 0;
+        width: 250px;
+        border: 1px solid #AAA;
+    }
+
+    .form input[type="checkbox"] {
+        width: 20px;
+    }
+
+    .form input[type="submit"] {
+        border: none;
+    }
+
+    .form-success-msg {
+        color: green;
+        padding: 5px;
+    }
+
+    font.errortext {
+        color: red;
+    }
+
+    .dislocation-form {
+        background: url('images/dashed.gif') repeat-x scroll 0 100% transparent;
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+
+    }
+
+    .dislocation-form input[type="text"] {
+        padding: 5px;
+    }
+
+    .dislocation-form input[type="submit"] {
+        background: url('images/bg_btn_dislaction.jpg') transparent;
+        width: 131px;
+    }
+}

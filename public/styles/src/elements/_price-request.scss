@@ -1,0 +1,44 @@
+.price-request {
+    position: relative;
+    display: block;
+    max-width: 225px;
+    height: 37px;
+    margin-bottom: 20px;
+    padding-left: 50px;
+    font-family: "Tahoma", "Times New Roman", serif;
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    background: url(images/pattern-for-price-request.png) 50% 50% no-repeat;
+    background-size: 100% 100%;
+
+    &:before {
+        @include icon('calc');
+        position: absolute;
+        top: 8px;
+        left: 18px;
+    }
+
+    &:link,
+    &:visited,
+    &:active {
+        text-decoration: none;
+        color: #fff;
+    }
+}
+
+@include screen-down(md) {
+    .sidebar .price-request {
+        padding-left: 40px;
+
+        &:before {
+            left: 15px;
+        }
+    }
+}
+
+@include screen-down(sm) {
+    .sidebar .price-request {
+        display: none;
+    }
+}

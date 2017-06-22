@@ -1,0 +1,50 @@
+.block-main {
+    @include clearfix;
+    padding: 0 20px 30px;
+
+    > .sidebar {
+        @include clearfix;
+        float: left;
+        width: 275px;
+        padding: 0 25px;
+    }
+
+    > .content {
+        @include clearfix;
+        margin-left: 275px;
+    }
+
+    &:first-child {
+        padding-top: 20px;
+    }
+}
+
+@include screen-down(md) {
+    .block-main {
+        > .sidebar {
+            width: 240px;
+        }
+
+        > .content {
+            margin-left: 240px;
+        }
+    }
+}
+
+@include screen-down(sm) {
+    .block-main {
+        display: flex;
+        flex-direction: column-reverse;
+
+        > .sidebar {
+            float: none;
+            width: 100%;
+            margin-top: 15px;
+            padding: 0;
+        }
+
+        > .content {
+            margin-left: 0;
+        }
+    }
+}

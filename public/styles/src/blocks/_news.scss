@@ -1,0 +1,16 @@
+.block-news {
+    @include clearfix;
+
+    div.news-list img.preview_picture {
+        margin: 0 4px 6px 0;
+    }
+
+    .news-list {
+        overflow: hidden;
+    }
+
+    .news-item {
+        @include clearfix;
+        margin-bottom: 15px;
+    }
+}

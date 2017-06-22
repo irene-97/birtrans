@@ -1,0 +1,78 @@
+.news-detail-share {
+    .share-switch {
+        display: block;
+        width: 20px;
+        height: 20px;
+        background: url('images/share/share.gif') scroll transparent center center no-repeat;
+    }
+
+    .share-window-parent {
+        position: relative;
+    }
+
+    .bookmarks-table {
+        height: 19px;
+        padding: 0;
+    }
+
+    .share-dialog {
+        position: absolute;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .share-dialog-left {
+        left: 18px;
+    }
+
+    .share-dialog-right {
+        right: 18px;
+    }
+
+    .share-dialog-inner-left {
+        background: url('images/share/background.gif') scroll transparent right center no-repeat;
+        padding: 0 1px 1px 4px;
+    }
+
+    .share-dialog-inner-right {
+        background: url('images/share/background-right.gif') scroll transparent left center no-repeat;
+        padding: 0 4px 1px 1px;
+    }
+
+    .bookmarks {
+        padding: 1px 2px 0 !important;
+        border: none !important;
+
+        a {
+            display: block;
+            width: 16px;
+            height: 16px;
+            overflow: hidden;
+            background: none no-repeat scroll center center transparent;
+
+            &.vk {
+                background-image: url('images/share/vk.gif');
+            }
+
+            &.facebook {
+                background-image: url('images/share/facebook.gif');
+            }
+
+            &.twitter {
+                background-image: url('images/share/twitter.gif');
+            }
+
+            &.delicious {
+                background-image: url('images/share/delicious.gif');
+            }
+
+            &.lj {
+                background-image: url('images/share/lj.gif');
+            }
+
+            &.mailru {
+                background-image: url('images/share/mailru.gif');
+            }
+        }
+    }
+}

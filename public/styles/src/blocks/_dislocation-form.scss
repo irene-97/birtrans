@@ -1,0 +1,41 @@
+.dislocation-form  {
+    background: url('images/dashed-dislocation.gif') repeat-x scroll 0 100% transparent;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+
+}
+
+.dislocation-form  input[type="text"]{
+    padding: 5px;
+}
+
+.dislocation-form  input[type="submit"]{
+    background: url('images/bg_btn_dislaction.jpg') transparent;
+    width: 131px;
+}
+
+#dislocation-table {
+    width:100%;
+}
+
+#dislocation-table th {
+    font-size: 85%;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #AAA;
+    height: 40px;
+    background: #EEE;
+}
+
+#dislocation-table td {
+    padding: 2px;
+    border: 1px solid #AAA;
+    vertical-align: middle;
+}
+
+@include screen-down(xs) {
+    .dislocation-form input[type="text"] {
+        margin-left: 54px;
+        margin-top: 20px;
+    }
+}

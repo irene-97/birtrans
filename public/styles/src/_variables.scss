@@ -1,0 +1,27 @@
+$fancybox-image-url: 'images/fancybox';
+
+$grid-breakpoints: (
+    xs: 0,
+    xsm: 590px,
+    sm: 690px,
+    md: 825px,
+    lg: 960px,
+    xl: 1050px
+);
+
+$container-max-widths: (
+    xs: 440px,
+    xsm: 540px,
+    sm: 640px,
+    md: 775px,
+    lg: 910px,
+    xl: 1000px
+);
+
+$container-padding-x: 0;
+
+$footer-min-heights: (
+    sm: 0
+);
+
+$site-min-width: 440px;

@@ -1,0 +1,35 @@
+.map-level_1 {
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    list-style-type: disc;
+
+    li {
+        display: list-item;
+        line-height: 17px;
+
+        a {
+            display: block;
+            padding-bottom: 15px;
+        }
+    }
+}
+
+.map-level_2 {
+    display: inline-block;
+    padding-bottom: 0;
+    font-weight: normal;
+    list-style-type: circle;
+
+    li {
+        display: list-item;
+        padding-bottom: 0;
+        line-height: 17px;
+
+        a {
+            display: block;
+            padding-bottom: 15px;
+        }
+    }
+}

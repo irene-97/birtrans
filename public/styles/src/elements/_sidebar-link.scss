@@ -1,0 +1,22 @@
+.sidebar-link {
+    margin-bottom: 15px;
+    font-family: "Tahoma", sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    outline: none;
+
+    a {
+        text-decoration: underline;
+        color: #004D9D;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
+
+@include screen-down(sm) {
+    .sidebar-link {
+        display: none;
+    }
+}

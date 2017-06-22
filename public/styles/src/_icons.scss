@@ -1,0 +1,420 @@
+$icons: (
+    "arrow-blue-right": (
+        width: 9px,
+        height: 13px,
+        src: "images/icons.png",
+        offset: (
+            x: -63px,
+            y: -37px,
+        ),
+    ),
+    "breadcrumbs": (
+        width: 10px,
+        height: 9px,
+        src: "images/icons.png",
+        offset: (
+            x: -63px,
+            y: -50px,
+        ),
+    ),
+    "calc": (
+        width: 15px,
+        height: 19px,
+        src: "images/icons.png",
+        offset: (
+            x: -14px,
+            y: -74px,
+        ),
+    ),
+    "car": (
+        width: 21px,
+        height: 17px,
+        src: "images/icons.png",
+        offset: (
+            x: -74px,
+            y: -26px,
+        ),
+    ),
+    "eye": (
+        width: 16px,
+        height: 10px,
+        src: "images/icons.png",
+        offset: (
+            x: -37px,
+            y: -63px,
+        ),
+    ),
+    "facebook": (
+        width: 37px,
+        height: 37px,
+        src: "images/icons.png",
+        offset: (
+            x: 0,
+            y: -37px,
+        ),
+    ),
+    "fly": (
+        width: 18px,
+        height: 18px,
+        src: "images/icons.png",
+        offset: (
+            x: -74px,
+            y: -43px,
+        ),
+    ),
+    "hamburger": (
+        width: 20px,
+        height: 13px,
+        src: "images/icons.png",
+        offset: (
+            x: -74px,
+            y: -61px,
+        ),
+    ),
+    "next": (
+        width: 26px,
+        height: 26px,
+        src: "images/icons.png",
+        offset: (
+            x: -74px,
+            y: 0,
+        ),
+    ),
+    "prev": (
+        width: 26px,
+        height: 26px,
+        src: "images/icons.png",
+        offset: (
+            x: -37px,
+            y: -37px,
+        ),
+    ),
+    "train": (
+        width: 14px,
+        height: 22px,
+        src: "images/icons.png",
+        offset: (
+            x: 0,
+            y: -74px,
+        ),
+    ),
+    "twitter": (
+        width: 37px,
+        height: 37px,
+        src: "images/icons.png",
+        offset: (
+            x: -37px,
+            y: 0,
+        ),
+    ),
+    "vk": (
+        width: 37px,
+        height: 37px,
+        src: "images/icons.png",
+        offset: (
+            x: 0,
+            y: 0,
+        ),
+    ),
+);
+
+@function icon-width($name) {
+    @return map-get(map-get($icons, $name), width);
+}
+
+@function icon-height($name) {
+    @return map-get(map-get($icons, $name), height);
+}
+
+@function icon-src($name) {
+    @return map-get(map-get($icons, $name), src);
+}
+
+@function icon-url($name) {
+    @return url(icon-src($name));
+}
+
+@function icon-offset-x($name) {
+    @return map-get(map-get(map-get($icons, $name), offset), x);
+}
+
+@function icon-offset-y($name) {
+    @return map-get(map-get(map-get($icons, $name), offset), y);
+}
+
+@function icon-offset($name) {
+    @return (icon-offset-x($name) icon-offset-y($name));
+}
+
+@mixin icon-width($name) {
+    width: icon-width($name);
+}
+
+@mixin icon-height($name) {
+    height: icon-height($name);
+}
+
+@mixin icon-size($name) {
+    @include icon-width($name);
+    @include icon-height($name);
+}
+
+@mixin icon-background-image($name) {
+    background-image: icon-url($name);
+}
+
+@mixin icon-background-position($name) {
+    background-position: icon-offset($name);
+}
+
+@mixin icon-background($name) {
+    background: icon-url($name) icon-offset($name) no-repeat;
+}
+
+@mixin icon-align-x($name) {
+    position: absolute;
+    left: 50%;
+    margin-left: (icon-width($name) / -2);
+}
+
+@mixin icon-align-y($name) {
+    position: absolute;
+    top: 50%;
+    margin-top: (icon-height($name) / -2);
+}
+
+@mixin icon-align-both($name) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: (icon-width($name) / -2);
+    margin-top: (icon-height($name) / -2);
+}
+
+@mixin icon($name, $align: null) {
+    @if is-superselector(":before", &) or
+        is-superselector("::before", &) or
+        is-superselector(":after", &) or
+        is-superselector("::after", &) {
+        content: "";
+    }
+
+    display: inline-block;
+
+    @if $align == "x" {
+        @include icon-align-x($name);
+    } @else if $align == "y" {
+        @include icon-align-y($name);
+    } @else if $align == "both" {
+        @include icon-align-both($name);
+    }
+
+    @include icon-size($name);
+
+    vertical-align: middle;
+
+    @include icon-background($name);
+}
+
+.icon,
+[class^="icon-"],
+[class*=" icon-"] {
+}
+
+.icon {
+    &-arrow-blue-right {
+        @include icon("arrow-blue-right");
+
+        &.align-x {
+            @include icon-align-x("arrow-blue-right");
+        }
+
+        &.align-y {
+            @include icon-align-y("arrow-blue-right");
+        }
+
+        &.align-both {
+            @include icon-align-both("arrow-blue-right");
+        }
+    }
+    &-breadcrumbs {
+        @include icon("breadcrumbs");
+
+        &.align-x {
+            @include icon-align-x("breadcrumbs");
+        }
+
+        &.align-y {
+            @include icon-align-y("breadcrumbs");
+        }
+
+        &.align-both {
+            @include icon-align-both("breadcrumbs");
+        }
+    }
+    &-calc {
+        @include icon("calc");
+
+        &.align-x {
+            @include icon-align-x("calc");
+        }
+
+        &.align-y {
+            @include icon-align-y("calc");
+        }
+
+        &.align-both {
+            @include icon-align-both("calc");
+        }
+    }
+    &-car {
+        @include icon("car");
+
+        &.align-x {
+            @include icon-align-x("car");
+        }
+
+        &.align-y {
+            @include icon-align-y("car");
+        }
+
+        &.align-both {
+            @include icon-align-both("car");
+        }
+    }
+    &-eye {
+        @include icon("eye");
+
+        &.align-x {
+            @include icon-align-x("eye");
+        }
+
+        &.align-y {
+            @include icon-align-y("eye");
+        }
+
+        &.align-both {
+            @include icon-align-both("eye");
+        }
+    }
+    &-facebook {
+        @include icon("facebook");
+
+        &.align-x {
+            @include icon-align-x("facebook");
+        }
+
+        &.align-y {
+            @include icon-align-y("facebook");
+        }
+
+        &.align-both {
+            @include icon-align-both("facebook");
+        }
+    }
+    &-fly {
+        @include icon("fly");
+
+        &.align-x {
+            @include icon-align-x("fly");
+        }
+
+        &.align-y {
+            @include icon-align-y("fly");
+        }
+
+        &.align-both {
+            @include icon-align-both("fly");
+        }
+    }
+    &-hamburger {
+        @include icon("hamburger");
+
+        &.align-x {
+            @include icon-align-x("hamburger");
+        }
+
+        &.align-y {
+            @include icon-align-y("hamburger");
+        }
+
+        &.align-both {
+            @include icon-align-both("hamburger");
+        }
+    }
+    &-next {
+        @include icon("next");
+
+        &.align-x {
+            @include icon-align-x("next");
+        }
+
+        &.align-y {
+            @include icon-align-y("next");
+        }
+
+        &.align-both {
+            @include icon-align-both("next");
+        }
+    }
+    &-prev {
+        @include icon("prev");
+
+        &.align-x {
+            @include icon-align-x("prev");
+        }
+
+        &.align-y {
+            @include icon-align-y("prev");
+        }
+
+        &.align-both {
+            @include icon-align-both("prev");
+        }
+    }
+    &-train {
+        @include icon("train");
+
+        &.align-x {
+            @include icon-align-x("train");
+        }
+
+        &.align-y {
+            @include icon-align-y("train");
+        }
+
+        &.align-both {
+            @include icon-align-both("train");
+        }
+    }
+    &-twitter {
+        @include icon("twitter");
+
+        &.align-x {
+            @include icon-align-x("twitter");
+        }
+
+        &.align-y {
+            @include icon-align-y("twitter");
+        }
+
+        &.align-both {
+            @include icon-align-both("twitter");
+        }
+    }
+    &-vk {
+        @include icon("vk");
+
+        &.align-x {
+            @include icon-align-x("vk");
+        }
+
+        &.align-y {
+            @include icon-align-y("vk");
+        }
+
+        &.align-both {
+            @include icon-align-both("vk");
+        }
+    }
+}

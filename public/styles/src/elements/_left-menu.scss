@@ -1,0 +1,55 @@
+.left-menu {
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    font-family: "Tahoma", "Times New Roman", serif;
+
+    li {
+        padding: 5px 0 5px 30px;
+
+        a {
+            text-decoration: none;
+            border-bottom: 1px dashed #004d9d;
+            font-size: 16px;
+
+            &:hover {
+                border-bottom: none;
+            }
+        }
+    }
+
+    .train {
+        position: relative;
+        margin-bottom: 10px;
+
+        &:before {
+            @include icon('train', 'y');
+            left: 0;
+        }
+    }
+
+    .car {
+        position: relative;
+        margin-bottom: 10px;
+
+        &:before {
+            @include icon('car', 'y');
+            left: 0;
+        }
+    }
+
+    .fly {
+        position: relative;
+        margin-bottom: 10px;
+
+        &:before {
+            @include icon('fly', 'y');
+            left: 0;
+        }
+    }
+}
+
+@include screen-down(sm) {
+    .sidebar .left-menu {
+        display: none;
+    }
+}

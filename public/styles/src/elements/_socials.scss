@@ -1,0 +1,32 @@
+.socials {
+    height: 38px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+
+    a {
+        text-decoration: none;
+    }
+
+    .icon-vk {
+        margin-left: 37px;
+    }
+
+    .icon-facebook {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+}
+
+@include screen-down(md) {
+    .sidebar .socials {
+        .icon-vk {
+            margin-left: 17px;
+        }
+    }
+}
+
+@include screen-down(sm) {
+    .sidebar .socials {
+        display: none;
+    }
+}

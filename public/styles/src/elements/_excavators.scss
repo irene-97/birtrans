@@ -1,0 +1,23 @@
+.excavators {
+    width: 220px;
+    max-height: 130px;
+    margin-bottom: 30px;
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@include screen-down(md) {
+    .sidebar .excavators {
+        width: 100%;
+    }
+}
+
+@include screen-down(sm) {
+    .sidebar .excavators {
+        display: none;
+    }
+}

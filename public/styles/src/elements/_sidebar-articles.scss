@@ -1,0 +1,19 @@
+.sidebar-articles {
+    margin: 15px 0;
+    font-size: 10.8px;
+
+    .article {
+        display: block;
+    }
+
+    .all-articles {
+        margin-top: 15px;
+    }
+}
+
+@include screen-down(sm) {
+    .sidebar-articles {
+        margin-top: 25px;
+        font-size: 15px;
+    }
+}

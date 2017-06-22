@@ -1,0 +1,10 @@
+@import "../../../node_modules/fancybox/dist/scss/jquery.fancybox";
+@import "../../../node_modules/fancybox/dist/helpers/scss/jquery.fancybox-buttons";
+@import "../../../node_modules/fancybox/dist/helpers/scss/jquery.fancybox-thumbs";
+@import "../../../node_modules/slick-carousel/slick/slick.scss";
+
+.fancybox-skin {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}

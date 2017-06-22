@@ -1,0 +1,26 @@
+.breadcrumbs {
+    margin-bottom: 15px;
+    padding: 0;
+
+    .item {
+        display: inline;
+        padding-left: 0;
+        font-size: 12px;
+
+        a {
+            padding-bottom: 0;
+        }
+
+        &:after {
+            @include icon('breadcrumbs');
+            margin-left: 5px;
+
+        }
+
+        &:last-child {
+            &:after {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+.dislocation {
+    position: relative;
+    display: block;
+    max-width: 225px;
+    height: 39px;
+    margin-bottom: 20px;
+    padding-left: 50px;
+    font-family: "Tahoma", "Times New Roman", serif;
+    font-size: 14px;
+    line-height: 39px;
+    text-decoration: none;
+    color: #666;
+    background: url(images/pattern-for-dislocation.gif) 50% 50% no-repeat;
+    background-size: 100% 100%;
+
+    &:link,
+    &:visited,
+    &:active {
+        text-decoration: none;
+        color: #666;
+    }
+
+    &:before {
+        @include icon('eye');
+        position: absolute;
+        top: 15px;
+        left: 16px;
+    }
+}
+
+@include screen-down(md) {
+    .sidebar .dislocation {
+        padding-left: 40px;
+
+        &:before {
+            left: 15px;
+        }
+    }
+}
+
+@include screen-down(sm) {
+    .sidebar .dislocation {
+        display: none;
+    }
+}
